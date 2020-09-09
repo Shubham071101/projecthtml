@@ -1,0 +1,237 @@
+<html>
+<head>
+<title>Registration | BEU</title>
+<link rel="stylesheet"type="text/css"href="css/style2.css">
+</head>
+<body bgcolor="skyblue">
+<font size="+2">
+<br>
+<h1 align="center">BOMBAY ENGINEERING UNIVERSITY</h1><br>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="index2.html">About Us</a></li>
+<li class="active"><a href="#">Registration</a></li>
+<li><a href="#Contact Info">Contact</a></li>
+</ul></font>
+<br><br><br><br><br><br><br>
+
+<center>
+<form action="#" autocomplete="off" onsubmit="return validation()">
+
+<div class="container">
+<form class="reg-form">
+<fieldset>
+<legend>
+<div class="heading">Registration Form</div>
+</legend>
+
+<fieldset>
+<legend>
+<div class ="field-name">Name</div>
+</legend>
+
+<input type="text" id="name" placeholder="Name">
+<br><span id="namee"></span>
+</fieldset>
+
+<fieldset>
+<legend>
+<div class="field-name">Email</div>
+</legend>
+
+<input type="text" id="email" placeholder="Email">
+<br><span id="emaill"></span>
+</fieldset>
+
+<fieldset>
+<legend>
+<div class="field-name">Date of Birth</div>
+</legend>
+<input type="text" id="dob" placeholder="Date of Birth">
+<br><span id="dobb"></span>
+</fieldset>
+
+<fieldset>
+<legend>
+<div class="field-name">Gender</div>
+</legend>
+<select class="gender-options">
+<option selected disabled hidden>Choose an option</option>
+<option>Male</option>
+<option>Female</option>
+<option>LGBTQ+</option>
+</select></fieldset>
+
+<fieldset>
+<legend>
+<div class="field-name">12th Percentage</div>
+</legend>
+<input type="text" id="percentage" placeholder="12th Percentage">
+<br><span id="percentagee"></span>
+</fieldset>
+
+<fieldset>
+<legend>
+<div class="field-name">JEE Percentile</div>
+</legend>
+<input type="text" id="percentile" placeholder="JEE Percentile">
+<br><span id="percentilee"></span>
+</fieldset>
+
+<fieldset>
+<legend>
+<div class="field-name">CET Marks</div>
+</legend>
+<input type="text" id="marks" placeholder="CET Marks">
+<br><span id="markss"></span>
+</fieldset>
+
+<fieldset>
+<legend>
+<div class="field-name">Department</div>
+</legend>
+<select class="gender-options">
+<option selected disabled hidden>Choose an option</option>
+<option>Mechanical</option>
+<option>Civil</option>
+<option>EXTC</option>
+<option>Information Tech</option>
+<option>Computer</option>
+</select></fieldset>
+
+<button type="submit" id="btn">SUBMIT</button>
+<button type="reset" id="btn">RESET</button>
+</fieldset>
+</div>
+</form>
+</center>
+
+<script type="text/javascript">
+function validation()
+{
+var name= document.getElementById('name').value;
+var email= document.getElementById('email').value;
+var dob= document.getElementById('dob').value;
+var percentage= document.getElementById('percentage').value;
+var percentile= document.getElementById('percentile').value;
+var marks= document.getElementById('marks').value;
+
+if(name=="")
+{
+document.getElementById('namee').innerHTML="Enter name";
+return false;
+}
+if(name.length<3)
+{
+document.getElementById('namee').innerHTML="Name should be more than 3 characters";
+return false;
+}
+if(!isNaN(name))
+{
+document.getElementById('namee').innerHTML="Numeric are not allowed in Name";
+return false;
+}
+else
+{
+document.getElementById('namee').innerHTML="";
+}
+
+if(email=="")
+{
+document.getElementById('emaill').innerHTML="Enter Email";
+return false;
+}
+if(email.indexOf('@')<=0)
+{
+document.getElementById('emaill').innerHTML="Invalid position of @/No @ found";
+return false;
+}
+if(email.charAt(email.length-4)!='.'  && email.charAt(email.length-3)!='.')
+{
+document.getElementById('emaill').innerHTML="2 or 3 lettes after ./No . found";
+return false;
+}
+else
+{
+document.getElementById('emaill').innerHTML="";
+}
+
+
+if(dob=="")
+{
+document.getElementById('dobb').innerHTML="Enter Date of Birth";
+return false;
+}
+if(isNaN(dob))
+{
+document.getElementById('dobb').innerHTML="Albhabets not allowed";
+return false;
+}
+if(dob.length<8 || dob.length>8 )
+{
+document.getElementById('dobb').innerHTML="DOB should be in 8 digits";
+return false;
+}
+else
+{
+document.getElementById('dobb').innerHTML="";
+}
+
+if(percentage=="")
+{
+document.getElementById('percentagee').innerHTML="Enter 12th Percentage";
+return false;
+}
+if(isNaN(percentage))
+{
+document.getElementById('percentagee').innerHTML="Albhabets not allowed";
+return false;
+}
+else
+{
+document.getElementById('percentagee').innerHTML="";
+}
+
+if(percentile=="")
+{
+document.getElementById('percentilee').innerHTML="Enter JEE Percentile";
+return false;
+}
+if(isNaN(percentile))
+{
+document.getElementById('percentilee').innerHTML="Albhabets not allowed";
+return false;
+}
+else
+{
+document.getElementById('percentilee').innerHTML="";
+}
+
+if(marks=="")
+{
+document.getElementById('markss').innerHTML="Enter CET Marks";
+return false;
+}
+if(isNaN(marks))
+{
+document.getElementById('markss').innerHTML="Albhabets not allowed";
+return false;
+}
+else
+{
+document.getElementById('markss').innerHTML="";
+}
+}
+</script>
+</font>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<h2 align="center"><a name="Contact Info">Contact Info</h2>
+<p align="center">Address: Bombay Engineering University, near JJ Park, Colaba, CST (W.)<br>
+Email: <a href="gmail.com">puravandshubham@gmail.com</a><br>
+Phone: <a href="9004909187">9966996699</a>
+</p>
+</body>
+</html>
+
+
+

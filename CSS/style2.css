@@ -1,0 +1,86 @@
+*{
+font-family: Century Gothic;
+}
+
+ul{
+float: right;
+list-style-type: none;
+margin-top: 25px;
+}
+ul li{
+display: inline-block;
+}
+ul li a{
+text-decoration: none;
+color: #fff;
+padding: 5px 20px;
+border: 1px solid transparent;
+}
+ul li a:hover{
+background-color: #fff;
+color: #000;
+transition:0.6s ease;
+}
+ul li.active a{
+background-color: #fff;
+color: #000;
+}
+
+
+
+.container{
+position:absolute;
+left:31%;
+min-width:35%;
+background:rgba(0,0,0,0.4);
+border-radius:20px;
+padding:20px;
+box-shadow:0 0 10px 2 px black;
+}
+.heading{
+margin:10px;
+font-size:30px;
+color:white;
+text-align:center;
+font-variant:small-caps;
+}
+.reg-form{
+text-align:center;
+}
+fieldset{
+border:1px solid rgba(255,255,255,0.5);
+margin:10px;
+}
+.field-name{
+color:white;
+font-size:20px;
+}
+input, .gender-options{
+width:90%;
+padding:10px;
+border:none;
+display: inline-block;
+}
+input:focus, .gender-options:focus{
+outline:none;
+}
+.male{
+padding:10px;
+border:none;
+}
+#btn
+{
+color: white;
+background:transparent;
+border:1px solid white;
+padding:10px 20px;
+margin:10px;
+}
+#btn:hover{
+background: black;
+cursor:pointer;
+}
+span{
+color: white;
+font-size:18px;
+}
