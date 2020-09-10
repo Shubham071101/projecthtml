@@ -47,7 +47,7 @@
 <legend>
 <div class="field-name">Date of Birth</div>
 </legend>
-<input type="text" id="dob" placeholder="Date of Birth">
+<input type="text" id="dob" placeholder="DDMMYYYY">
 <br><span id="dobb"></span>
 </fieldset>
 
@@ -55,12 +55,14 @@
 <legend>
 <div class="field-name">Gender</div>
 </legend>
-<select class="gender-options">
-<option selected disabled hidden>Choose an option</option>
+<select class="gender-options"  id="gender">
+<option value="gen" selected disabled hidden>Choose an option</option>
 <option>Male</option>
 <option>Female</option>
 <option>LGBTQ+</option>
-</select></fieldset>
+</select>
+<span id="genderr"></span>
+</fieldset>
 
 <fieldset>
 <legend>
@@ -88,16 +90,35 @@
 
 <fieldset>
 <legend>
-<div class="field-name">Department</div>
+<div class="field-name">Department: Preference 1</div>
 </legend>
-<select class="gender-options">
-<option selected disabled hidden>Choose an option</option>
+<select class="gender-options" id="department" name="">
+<option value="dep" selected disabled hidden >Choose an option</option>
 <option>Mechanical</option>
 <option>Civil</option>
 <option>EXTC</option>
 <option>Information Tech</option>
 <option>Computer</option>
-</select></fieldset>
+</select>
+<span id="departmentt"></span>
+</fieldset>
+
+
+<fieldset>
+<legend>
+<div class="field-name">Department: Preference 2</div>
+</legend>
+<select class="gender-options" id="department2" name="">
+<option value="dep2" selected disabled hidden >Choose an option</option>
+<option>~NA~</option>
+<option>Mechanical</option>
+<option>Civil</option>
+<option>EXTC</option>
+<option>Information Tech</option>
+<option>Computer</option>
+</select>
+<span id="departmentt2"></span>
+</fieldset>
 
 <button type="submit" id="btn">SUBMIT</button>
 <button type="reset" id="btn">RESET</button>
@@ -115,20 +136,23 @@ var dob= document.getElementById('dob').value;
 var percentage= document.getElementById('percentage').value;
 var percentile= document.getElementById('percentile').value;
 var marks= document.getElementById('marks').value;
+var department= document.getElementById('department').value;
+var gender= document.getElementById('gender').value;
+var department2= document.getElementById('department2').value;
 
 if(name=="")
 {
-document.getElementById('namee').innerHTML="Enter name";
+document.getElementById('namee').innerHTML="**Enter Name**";
 return false;
 }
 if(name.length<3)
 {
-document.getElementById('namee').innerHTML="Name should be more than 3 characters";
+document.getElementById('namee').innerHTML="**3 or more letters**";
 return false;
 }
 if(!isNaN(name))
 {
-document.getElementById('namee').innerHTML="Numeric are not allowed in Name";
+document.getElementById('namee').innerHTML="**No numbers allowed**";
 return false;
 }
 else
@@ -138,17 +162,18 @@ document.getElementById('namee').innerHTML="";
 
 if(email=="")
 {
-document.getElementById('emaill').innerHTML="Enter Email";
+document.getElementById('emaill').innerHTML="**Enter Email**";
 return false;
 }
+
 if(email.indexOf('@')<=0)
 {
-document.getElementById('emaill').innerHTML="Invalid position of @/No @ found";
+document.getElementById('emaill').innerHTML="**Invalid Email (Check @)**";
 return false;
 }
 if(email.charAt(email.length-4)!='.'  && email.charAt(email.length-3)!='.')
 {
-document.getElementById('emaill').innerHTML="2 or 3 lettes after ./No . found";
+document.getElementById('emaill').innerHTML="**Invaild Emai l(Check . )**";
 return false;
 }
 else
@@ -156,20 +181,19 @@ else
 document.getElementById('emaill').innerHTML="";
 }
 
-
 if(dob=="")
 {
-document.getElementById('dobb').innerHTML="Enter Date of Birth";
+document.getElementById('dobb').innerHTML="**Enter Date of Birth**";
 return false;
 }
 if(isNaN(dob))
 {
-document.getElementById('dobb').innerHTML="Albhabets not allowed";
+document.getElementById('dobb').innerHTML="**Input Digits (DDMMYYYY)**";
 return false;
 }
 if(dob.length<8 || dob.length>8 )
 {
-document.getElementById('dobb').innerHTML="DOB should be in 8 digits";
+document.getElementById('dobb').innerHTML="**Input 8 Digits**";
 return false;
 }
 else
@@ -177,14 +201,32 @@ else
 document.getElementById('dobb').innerHTML="";
 }
 
-if(percentage=="")
+if(gender=="gen")
 {
-document.getElementById('percentagee').innerHTML="Enter 12th Percentage";
+document.getElementById('genderr').innerHTML="**Select gender**";
 return false;
 }
+else
+{
+document.getElementById('genderr').innerHTML="";
+}
+
+
+
+if(percentage=="")
+{
+document.getElementById('percentagee').innerHTML="**Enter Percentage**";
+return false;
+}
+if(isNaN(percentage)||percentage<35||percentage >100)
+{
+document.getElementById('percentagee').innerHTML="**Invalid Percentage (35% to 100%)**";
+return false;
+}
+
 if(isNaN(percentage))
 {
-document.getElementById('percentagee').innerHTML="Albhabets not allowed";
+document.getElementById('percentagee').innerHTML="**Only Numbers**";
 return false;
 }
 else
@@ -194,12 +236,20 @@ document.getElementById('percentagee').innerHTML="";
 
 if(percentile=="")
 {
-document.getElementById('percentilee').innerHTML="Enter JEE Percentile";
+document.getElementById('percentilee').innerHTML="**Enter JEE Percentile**";
 return false;
 }
+
+if(isNaN(percentile)||percentile<1||percentile>100)
+{
+document.getElementById('percentilee').innerHTML="**Invalid Percentile**";
+return false;
+}
+
+
 if(isNaN(percentile))
 {
-document.getElementById('percentilee').innerHTML="Albhabets not allowed";
+document.getElementById('percentilee').innerHTML="**Only numbers**";
 return false;
 }
 else
@@ -209,18 +259,45 @@ document.getElementById('percentilee').innerHTML="";
 
 if(marks=="")
 {
-document.getElementById('markss').innerHTML="Enter CET Marks";
+document.getElementById('markss').innerHTML="**Enter CET Marks**";
 return false;
 }
+
+if(isNaN(marks)||marks<1||marks>100)
+{
+document.getElementById('markss').innerHTML="**Invalid Marks**";
+return false;
+}
+
 if(isNaN(marks))
 {
-document.getElementById('markss').innerHTML="Albhabets not allowed";
+document.getElementById('markss').innerHTML="**Only Numbers**";
 return false;
 }
 else
 {
 document.getElementById('markss').innerHTML="";
 }
+if(department=="dep")
+{
+document.getElementById('departmentt').innerHTML="**Select Preference 1**";
+return false;
+}
+else
+{
+document.getElementById('departmentt').innerHTML="";
+}
+
+if(department2=="dep2")
+{
+document.getElementById('departmentt2').innerHTML="**Select Preference 2**";
+return false;
+}
+else
+{
+document.getElementById('departmentt2').innerHTML="";
+}
+alert("Registered Succesfully");
 }
 </script>
 </font>
